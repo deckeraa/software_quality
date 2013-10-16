@@ -1,3 +1,5 @@
 * Requirements
 
 * Test Cases
+
+* Justification Paragraphs and lame excuses for not using SE Tools
