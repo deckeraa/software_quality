@@ -1,7 +1,15 @@
+* Requirements
+
 R001:	If Caller A and caller B are in a stable two party telephone call and caller C calls caller A and caller A hasn’t disable call waiting,  then caller A shall hear the notify beep and caller B should not hear the notify beep and caller C should hear normal ringing.
 R002:	If Caller A and caller B are in a stable two party telephone call and caller C calls caller A and caller A  disable call waiting,  then caller A shall not hear the notify beep and caller B should not hear the notify beep and caller C should hear normal ringing.
 R003:	If Caller A and caller B are in a stable two party telephone call and caller C calls caller A and caller A hasn’t disable call waiting and put caller B on hold to answer caller C, then caller A shall not hear the notify beep and caller B should not hear anything and caller C should hear caller A.
-
+R004: If Caller A and Caller C are in a stable two party telephone call after
+Caller A switched from talking to Caller B in order to talk to Caller C, then
+Caller A shall go back to talking to Caller B if Caller C hangs up.
+R005: If Caller A and Caller C are in a stable two party telephone call after
+Caller A switched from talking to Caller B in order to talk to Caller C, then
+Caller A shall be able to switch back to talking to Caller B without hanging up
+on Caller C.
 
 * Test Cases
 
