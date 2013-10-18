@@ -20,3 +20,14 @@ that the system will have the best software quality possible. This lab helps us 
 creating the requirements in the test document and actually creating the test cases base on the requirements.
 
 Dillon Hiatt
+
+Dylan Jones:
+On 10/18/2013 I forgot to punch in to SE Tools until after I started working.
+
+Justification Paragraph:
+We are doing lab 4 to get more experience in creating good requirements and
+writing test documents.  With a call waiting example, we are able to take a
+simple system and use it as practice.  Being to write good requirements and the
+test document are invaluable when it comes to quality software.  A major part
+of the test document is the test cases, which are useful for the testing that
+must be done in order to assure the quality of a software system.
