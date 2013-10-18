@@ -10,7 +10,8 @@ R005: If Caller A and Caller C are in a stable two party telephone call after
 Caller A switched from talking to Caller B in order to talk to Caller C, then
 Caller A shall be able to switch back to talking to Caller B without hanging up
 on Caller C.
-
+R006: The call waiting tone shall be sounded for no longer than 3 (+/- 1) seconds.
+R007: The call waiting tone shall be a 440 Hz (+/- 5 Hz) sine wave.
 
 * Setup
 For all tests we will need the following setup:
