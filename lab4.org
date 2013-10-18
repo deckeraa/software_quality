@@ -2,7 +2,14 @@ R001:	If Caller A and caller B are in a stable two party telephone call and call
 R002:	If Caller A and caller B are in a stable two party telephone call and caller C calls caller A and caller A  disable call waiting,  then caller A shall not hear the notify beep and caller B should not hear the notify beep and caller C should hear normal ringing.
 R003:	If Caller A and caller B are in a stable two party telephone call and caller C calls caller A and caller A hasn’t disable call waiting and put caller B on hold to answer caller C, then caller A shall not hear the notify beep and caller B should not hear anything and caller C should hear caller A.
 
+Dillon Hiatt
 
 * Test Cases
 
 * Justification Paragraphs and lame excuses for not using SE Tools
+We are doing lab 4 to help us understand how to create good requirements, and test cases for a real world situation. 
+It teaches us to ensure that the requirements and test cases cover every situation that the call waiting can have so 
+that the system will have the best software quality possible. This lab helps us to go through the process from 
+creating the requirements in the test document and actually creating the test cases base on the requirements.
+
+Dillon Hiatt
