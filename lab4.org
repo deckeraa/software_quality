@@ -31,6 +31,38 @@ Four installed telephones will be required for testing.
 To tear down after a test, disconnect all phones involved by hanging up.
 
 * Test Cases
+** Test call waiting tone
+*** Purpose
+    Verify R006 and R007.
+*** Estimated Test Time
+    10 minutes
+*** Setup
+    Standard setup as described above. A stopwatch and an electronic tuner will be needed.
+*** Execution
+|--------------------------------------------------------------------+-----------+----------|
+| Step                                                               | Pass/Fail | Comments |
+|--------------------------------------------------------------------+-----------+----------|
+| 1. Have caller A_enabled call caller B.                            | --        | --       |
+| 2. Have caller C call caller A.                                    | --        | --       |
+| 3. Start the stopwatch when you hear the call waiting tone.        | --        | --       |
+| 4. [Verify the tone is a 440 Hz sine wave using the tuner. (R007)] |           |          |
+| 5. Stop the stopwatch when the call waiting tone stops.            | --        | --       |
+| 6. [Verify the tone length is 3 seconds (+- 1 second) (R006)]      |           |          |
+|--------------------------------------------------------------------+-----------+----------|
+*** Expected Results
+    Call waiting tone was a 440 Hz sine wave (R007).
+    Call waiting tone length was 3 seconds (+/- 1 second) (R006).
+
+*** Results Summary
+|-----------+-------+------+-------------+-----------+----------|
+| Date/Time | Build | Test | Actual Time | Pass/Fail | Comments |
+|-----------+-------+------+-------------+-----------+----------|
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|-----------+-------+------+-------------+-----------+----------|
 
 * Justification Paragraphs and lame excuses for not using SE Tools
 We are doing lab 4 to help us understand how to create good requirements, and test cases for a real world situation.
