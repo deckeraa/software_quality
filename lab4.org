@@ -8,9 +8,9 @@ R003:	If Caller A and caller B are in a stable two party telephone call and call
 
 R004: If Caller A and Caller C are in a stable two party telephone call after Caller A switched from talking to Caller B in order to talk to Caller C, then Caller A shall go back to talking to Caller B if Caller C hangs up.
 
-R005: If Caller A and Caller C are in a stable two party telephone call after Caller A switched from talking to Caller B in order to talk to Caller C, then Caller A shall be able to switch back to talking to Caller B without hanging up on Caller C.
+R005: If Caller A and Caller C are in a stable two party telephone call after Caller A switched from talking to Caller B in order to talk to Caller C, then Caller A shall go back to talking to Caller B if Caller A hangs up on Caller C.
 
-R006: If Caller A and Caller C are in a stable two party telephoen call after Caller A switched from talking to Caller B in order to talk to Caller C, then Caller A shall go back to talking to Caller B if Caller A hangs up on Caller C.
+R006: If Caller A and Caller C are in a stable two party telephone call after Caller A switched from talking to Caller B in order to talk to Caller C, then Caller A shall be able to switch back to talking to Caller B without hanging up on Caller C.
 
 R007: The call waiting tone shall be sounded for no longer than 3 (+/- 1) seconds.
 
@@ -55,6 +55,68 @@ To tear down after a test, disconnect all phones involved by hanging up.
 *** Expected Results
     Call waiting tone was a 440 Hz sine wave (R007).
     Call waiting tone length was 3 seconds (+/- 1 second) (R006).
+
+*** Results Summary
+|-----------+-------+------+-------------+-----------+----------|
+| Date/Time | Build | Test | Actual Time | Pass/Fail | Comments |
+|-----------+-------+------+-------------+-----------+----------|
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|-----------+-------+------+-------------+-----------+----------|
+
+** Test caller hangup 1
+*** Purpose
+    Verify R004
+*** Estimated Test Time
+    10 minutes
+*** Setup
+    Standard setup as described above.
+*** Execution
+|-----------------------------------------------------------------------------------------------------------+-----------+----------|
+| Step                                                                                                      | Pass/Fail | Comments |
+|-----------------------------------------------------------------------------------------------------------+-----------+----------|
+| 1. Have caller A_enabled call caller B.                                                                   | --        | --       |
+| 2. Have caller C call caller A.                                                                           | --        | --       |
+| 3. When caller A_enabled hears the call waiting tone, caller A_enabled should switch to talk to caller C. | --        | --       |
+| 4. When caller A_enabled can talk to caller C, caller C should hang up.                                   | --        | --       |
+| 5. [Verify that caller A_enabled is now talking to caller B. (R004)]                                      |           |          |
+|-----------------------------------------------------------------------------------------------------------+-----------+----------|
+*** Expected Results
+    Caller A_enabled can talk to caller B after caller C hangs up on caller A_enabled (R004).
+
+*** Results Summary
+|-----------+-------+------+-------------+-----------+----------|
+| Date/Time | Build | Test | Actual Time | Pass/Fail | Comments |
+|-----------+-------+------+-------------+-----------+----------|
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|-----------+-------+------+-------------+-----------+----------|
+
+** Test caller hangup 2
+*** Purpose
+    Verify R005
+*** Estimated Test Time
+    10 minutes
+*** Setup
+    Standard setup as described above.
+*** Execution
+|-----------------------------------------------------------------------------------------------------------+-----------+----------|
+| Step                                                                                                      | Pass/Fail | Comments |
+|-----------------------------------------------------------------------------------------------------------+-----------+----------|
+| 1. Have caller A_enabled call caller B.                                                                   | --        | --       |
+| 2. Have caller C call caller A.                                                                           | --        | --       |
+| 3. When caller A_enabled hears the call waiting tone, caller A_enabled should switch to talk to caller C. | --        | --       |
+| 4. When caller A_enabled can talk to caller C, caller A_enabled should hang up on caller C.               | --        | --       |
+| 5. [Verify that caller A_enabled is now talking to caller B. (R005)]                                      |           |          |
+|-----------------------------------------------------------------------------------------------------------+-----------+----------|
+*** Expected Results
+    Caller A_enabled can talk to caller B after caller A_enabled hangs up on caller C (R005).
 
 *** Results Summary
 |-----------+-------+------+-------------+-----------+----------|
