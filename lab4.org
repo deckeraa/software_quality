@@ -22,6 +22,10 @@ R010: Caller A and Caller B are in a stable two party telephone call where calle
 
 R011: Caller A and Caller B are in a stable two party telephone call where caller A has disabled call waiting. Caller C attempts to call caller A; caller A shall remain connected to caller B.
 
+R012: The call waiting tone will sound every 5 seconds (+/- 1) seconds while caller C is attempting to reach Caller A.
+
+R013: The call waiting tone will cease for the remainder of the call when Caller A responds to Caller C.
+
 * Setup
 For all tests we will need the following setup:
 ** Software and hardware installation for call routing server
