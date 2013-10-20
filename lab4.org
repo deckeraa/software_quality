@@ -2,9 +2,9 @@
 
 R001:	If Caller A and caller B are in a stable two party telephone call and caller C calls caller A and caller A hasn’t disable call waiting,  then caller A shall hear the notify beep and caller B should not hear the notify beep and caller C should hear normal ringing.
 
-R002:	If Caller A and caller B are in a stable two party telephone call and caller C calls caller A and caller A has disabled call waiting,  then caller A shall not hear the notify beep and caller B should not hear the notify beep and caller C should hear normal ringing.
+R002:	If Caller A and caller B are in a stable two party telephone call and caller C calls caller A and caller A has disabled call waiting,  then caller A shall not hear the notify beep and caller B should not hear the notify beep and caller C should hear a busy tone.
 
-R003:	If Caller A and caller B are in a stable two party telephone call and caller C calls caller A and caller A hasn’t disable call waiting and put caller B on hold to answer caller C, then caller A shall not hear the notify beep and caller B should not hear anything and caller C should hear caller A.
+R003:	Caller A and caller B are in a stable two party telephone call and caller C calls caller A. Caller A hasn’t disabled call waiting and puts caller B on hold to answer caller C, then caller A shall not hear the notify beep and caller B should not hear anything and caller C shall hear caller A and vice versa.
 
 R004: If Caller A and Caller C are in a stable two party telephone call after Caller A switched from talking to Caller B in order to talk to Caller C, then Caller A shall go back to talking to Caller B if Caller C hangs up.
 
@@ -15,6 +15,12 @@ R006: If Caller A and Caller C are in a stable two party telephone call after Ca
 R007: The call waiting tone shall be sounded for no longer than 3 (+/- 1) seconds.
 
 R008: The call waiting tone shall be a 440 Hz (+/- 5 Hz) sine wave.
+
+R009: If Caller A and Caller B are in a stable two party telephone call where caller C is on hold, and caller D then calls caller A, caller D shall hear a busy tone.
+
+R010: Caller A and Caller B are in a stable two party telephone call where caller A has enabled call waiting. Caller C attempts to call caller A; if caller A does not switch to caller C's call, then caller A shall remain connected to caller B once the notify beep stops.
+
+R011: Caller A and Caller B are in a stable two party telephone call where caller A has disabled call waiting. Caller C attempts to call caller A; caller A shall remain connected to caller B.
 
 * Setup
 For all tests we will need the following setup:
@@ -50,7 +56,7 @@ To tear down after a test, disconnect all phones involved by hanging up.
 | 3. Start the stopwatch when you hear the call waiting tone.        | --        | --       |
 | 4. [Verify the tone is a 440 Hz sine wave using the tuner. (R007)] |           |          |
 | 5. Stop the stopwatch when the call waiting tone stops.            | --        | --       |
-| 6. [Verify the tone length is 3 seconds (+- 1 second) (R006)]      |           |          |
+| 6. [Verify the tone length is 3 seconds (+/- 1 second) (R006)]      |           |          |
 |--------------------------------------------------------------------+-----------+----------|
 *** Expected Results
     Call waiting tone was a 440 Hz sine wave (R007).
@@ -129,6 +135,68 @@ To tear down after a test, disconnect all phones involved by hanging up.
 |           |       |      |             |           |          |
 |-----------+-------+------+-------------+-----------+----------|
 
+** Test call stability
+*** Purpose
+    Verify R010
+*** Estimated Test Time
+    10 minutes
+*** Setup
+    Standard setup as described above. A stopwatch will be needed.
+*** Execution
+|--------------------------------------------------------------------+-----------+----------|
+| Step                                                               | Pass/Fail | Comments |
+|--------------------------------------------------------------------+-----------+----------|
+| 1. Have caller A_enabled call caller B.                            | --        | --       |
+| 2. Have caller C call caller A.                                    | --        | --       |
+| 3. Start the stopwatch when you hear the call waiting tone.        | --        | --       |
+| 4. Stop the stopwatch when the call waiting tone stops.            | --        | --       |
+| 5. [Verify the caller A is still connected to caller B. (R010)]      |           |          |
+|--------------------------------------------------------------------+-----------+----------|
+*** Expected Results
+    Caller A_enabled can talk to caller B after caller A _enabledignores a call from caller C (R010).
+
+*** Results Summary
+|-----------+-------+------+-------------+-----------+----------|
+| Date/Time | Build | Test | Actual Time | Pass/Fail | Comments |
+|-----------+-------+------+-------------+-----------+----------|
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|-----------+-------+------+-------------+-----------+----------|
+
+** Test call stability 2
+*** Purpose
+    Verify R011
+*** Estimated Test Time
+    10 minutes
+*** Setup
+    Standard setup as described above. A stopwatch will be needed.
+*** Execution
+|--------------------------------------------------------------------+-----------+----------|
+| Step                                                               | Pass/Fail | Comments |
+|--------------------------------------------------------------------+-----------+----------|
+| 1. Have caller A_disabled call caller B.                            | --        | --       |
+| 2. Have caller C call caller A and start the stopwatch.            | --        | --       |
+| 4. Stop the stopwatch after six (+/- 3) seconds.            | --        | --       |
+| 5. [Verify the caller A is still connected to caller B. (R011)]      |           |          |
+|--------------------------------------------------------------------+-----------+----------|
+*** Expected Results
+    Caller A_dsiabled can talk to caller B after caller C attempts a to call A_disabled (R010).
+
+*** Results Summary
+|-----------+-------+------+-------------+-----------+----------|
+| Date/Time | Build | Test | Actual Time | Pass/Fail | Comments |
+|-----------+-------+------+-------------+-----------+----------|
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|-----------+-------+------+-------------+-----------+----------|
+
+
 * Justification Paragraphs and lame excuses for not using SE Tools
 We are doing lab 4 to help us understand how to create good requirements, and test cases for a real world situation.
 It teaches us to ensure that the requirements and test cases cover every situation that the call waiting can have so
@@ -147,3 +215,10 @@ simple system and use it as practice.  Being to write good requirements and the
 test document are invaluable when it comes to quality software.  A major part
 of the test document is the test cases, which are useful for the testing that
 must be done in order to assure the quality of a software system.
+
+Brendan Compton:
+We are doing lab four in order to practice writing testable requirements for a realistic
+application. Writing test cases for these requirements allows us to understand what
+it takes to make a good testable requirement as well as a quality test case. Test cases
+that actually test the system are a crucial part of any quality software system.
+
