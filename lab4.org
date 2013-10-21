@@ -219,7 +219,7 @@ To tear down after a test, disconnect all phones involved by hanging up.
 |4. Have caller C either leave a message to Caller A or hang up	       | --        | --       |
 |5. Verify that caller A_enabled is still talking to caller B	          |        |     |
 |--------------------------------------------------------------------+-----------+----------|
-***Expected Results
+*** Expected Results
     Caller A should still be talking to Caller B and the call waiting tone will be disabled (R002).
 *** Results Summary
 |-----------+-------+------+-------------+-----------+----------|
