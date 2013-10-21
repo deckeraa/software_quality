@@ -22,6 +22,10 @@ R010: Caller A and Caller B are in a stable two party telephone call where calle
 
 R011: Caller A and Caller B are in a stable two party telephone call where caller A has disabled call waiting. Caller C attempts to call caller A; caller A shall remain connected to caller B.
 
+R012: The call waiting tone will sound every 5 seconds (+/- 1) seconds while caller C is attempting to reach Caller A.
+
+R013: The call waiting tone will cease for the remainder of the call when Caller A responds to Caller C.
+
 * Setup
 For all tests we will need the following setup:
 ** Software and hardware installation for call routing server
@@ -42,7 +46,7 @@ To tear down after a test, disconnect all phones involved by hanging up.
 * Test Cases
 ** Test call waiting tone
 *** Purpose
-    Verify R006 and R007.
+    Verify R007 and R008.
 *** Estimated Test Time
     10 minutes
 *** Setup
@@ -54,13 +58,13 @@ To tear down after a test, disconnect all phones involved by hanging up.
 | 1. Have caller A_enabled call caller B.                            | --        | --       |
 | 2. Have caller C call caller A.                                    | --        | --       |
 | 3. Start the stopwatch when you hear the call waiting tone.        | --        | --       |
-| 4. [Verify the tone is a 440 Hz sine wave using the tuner. (R007)] |           |          |
+| 4. [Verify the tone is a 440 Hz sine wave using the tuner. (R008)] |           |          |
 | 5. Stop the stopwatch when the call waiting tone stops.            | --        | --       |
-| 6. [Verify the tone length is 3 seconds (+/- 1 second) (R006)]      |           |          |
+| 6. [Verify the tone length is 3 seconds (+/- 1 second) (R007)]     |           |          |
 |--------------------------------------------------------------------+-----------+----------|
 *** Expected Results
-    Call waiting tone was a 440 Hz sine wave (R007).
-    Call waiting tone length was 3 seconds (+/- 1 second) (R006).
+    Call waiting tone was a 440 Hz sine wave (R008).
+    Call waiting tone length was 3 seconds (+/- 1 second) (R007).
 
 *** Results Summary
 |-----------+-------+------+-------------+-----------+----------|
@@ -220,6 +224,70 @@ To tear down after a test, disconnect all phones involved by hanging up.
 *** Expected Results
     Caller A can talk to caller B and C after caller D attempts a to call A when a call is already waiting (R009).
 	
+
+*** Results Summary
+|-----------+-------+------+-------------+-----------+----------|
+| Date/Time | Build | Test | Actual Time | Pass/Fail | Comments |
+|-----------+-------+------+-------------+-----------+----------|
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|-----------+-------+------+-------------+-----------+----------|
+
+
+
+** Test call waiting disabling
+*** Purpose
+    Verify R002.
+*** Estimated Test Time
+    10 minutes
+*** Setup
+    Standard setup as described above. A stopwatch and an electronic tuner will be needed.
+*** Execution
+|--------------------------------------------------------------------+-----------+----------|
+| Step                                                               | Pass/Fail | Comments |
+|--------------------------------------------------------------------+-----------+----------|
+|1. Have caller A_enabled call caller B.	                             | --        | --       |
+|2. Have caller C call caller A.	                                     | --        | --       |
+|3. Have caller A_disable the call waiting with caller C           	    | --        | --       |
+|4. Have caller C either leave a message to Caller A or hang up	       | --        | --       |
+|5. Verify that caller A_enabled is still talking to caller B	          |        |     |
+|--------------------------------------------------------------------+-----------+----------|
+*** Expected Results
+    Caller A should still be talking to Caller B and the call waiting tone will be disabled (R002).
+*** Results Summary
+|-----------+-------+------+-------------+-----------+----------|
+| Date/Time | Build | Test | Actual Time | Pass/Fail | Comments |
+|-----------+-------+------+-------------+-----------+----------|
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|-----------+-------+------+-------------+-----------+----------|
+
+** Test call waiting switch
+*** Purpose
+    Verify R006
+*** Estimated Test Time
+    10 minutes
+*** Setup
+    Standard setup as described above.
+*** Execution
+|-----------------------------------------------------------------------------------------------------------+-----------+----------|
+| Step                                                                                                      | Pass/Fail | Comments |
+|-----------------------------------------------------------------------------------------------------------+-----------+----------|
+| 1. Have caller A_enabled call caller B.                                                                   | --        | --       |
+| 2. Have caller C call caller A.                                                                           | --        | --       |
+| 3. When caller A_enabled hears the call waiting tone.                                                     | --        | --       |
+| 4. Have caller A_enabled switch to caller C.                                                              | --        | --       |
+| 5. [Verify that caller A_enabled can talk to caller C. (R006)]                                            |           |          |
+| 6. [Verify that caller B is on hold. (R006)]                                                              |           |          |
+|-----------------------------------------------------------------------------------------------------------+-----------+----------|
+*** Expected Results
+    Caller A_enabled can talk to caller C without hanging up on caller B (R006).
 
 *** Results Summary
 |-----------+-------+------+-------------+-----------+----------|
