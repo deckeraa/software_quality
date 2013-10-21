@@ -301,6 +301,43 @@ To tear down after a test, disconnect all phones involved by hanging up.
 |-----------+-------+------+-------------+-----------+----------|
 
 
+
+** Call Waiting Tone
+*** Purpose
+    Verify R001.
+*** Estimated Test Time
+    10 minutes
+*** Setup
+    Standard setup as described above. A stopwatch and an electronic tuner will be needed.
+*** Execution
+|--------------------------------------------------------------------+-----------+----------|
+| Step                                                               | Pass/Fail | Comments |
+|--------------------------------------------------------------------+-----------+----------|
+| 1. Have caller A_enabled call caller B.                            | --        | --       |
+| 2. Have caller C call caller A.                                    | --        | --       |
+| 3. Caller A shall hear a notify beep.				     | --        | --       |
+| 4. Caller B shall hear Caller A				     |           |          |
+| 5. Verify Caller C  hear a ring tone				     | --        | --       |
+| 6. Verify that Caller B does not hear notify tone.		     |           |          |
+|--------------------------------------------------------------------+-----------+----------|
+*** Expected Results
+    Caller A shall hear a notify tone, Caller C shall hear a ring tone,
+    and Caller B shall not hear a notify tone.
+
+*** Results Summary
+|-----------+-------+------+-------------+-----------+----------|
+| Date/Time | Build | Test | Actual Time | Pass/Fail | Comments |
+|-----------+-------+------+-------------+-----------+----------|
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|-----------+-------+------+-------------+-----------+----------|
+
+
+
+
 * Justification Paragraphs and lame excuses for not using SE Tools
 We are doing lab 4 to help us understand how to create good requirements, and test cases for a real world situation.
 It teaches us to ensure that the requirements and test cases cover every situation that the call waiting can have so
