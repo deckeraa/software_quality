@@ -232,7 +232,37 @@ To tear down after a test, disconnect all phones involved by hanging up.
 |           |       |      |             |           |          |
 |-----------+-------+------+-------------+-----------+----------|
 
+** Test call waiting switch
+*** Purpose
+    Verify R006
+*** Estimated Test Time
+    10 minutes
+*** Setup
+    Standard setup as described above.
+*** Execution
+|-----------------------------------------------------------------------------------------------------------+-----------+----------|
+| Step                                                                                                      | Pass/Fail | Comments |
+|-----------------------------------------------------------------------------------------------------------+-----------+----------|
+| 1. Have caller A_enabled call caller B.                                                                   | --        | --       |
+| 2. Have caller C call caller A.                                                                           | --        | --       |
+| 3. When caller A_enabled hears the call waiting tone.                                                     | --        | --       |
+| 4. Have caller A_enabled switch to caller C.                                                              | --        | --       |
+| 5. [Verify that caller A_enabled can talk to caller C. (R006)]                                            |           |          |
+| 6. [Verify that caller B is on hold. (R006)]                                                              |           |          |
+|-----------------------------------------------------------------------------------------------------------+-----------+----------|
+*** Expected Results
+    Caller A_enabled can talk to caller C without hanging up on caller B (R006).
 
+*** Results Summary
+|-----------+-------+------+-------------+-----------+----------|
+| Date/Time | Build | Test | Actual Time | Pass/Fail | Comments |
+|-----------+-------+------+-------------+-----------+----------|
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|-----------+-------+------+-------------+-----------+----------|
 
 
 * Justification Paragraphs and lame excuses for not using SE Tools
