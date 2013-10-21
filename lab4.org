@@ -202,14 +202,14 @@ To tear down after a test, disconnect all phones involved by hanging up.
 
 
 
-**Test call waiting disabling
-**Purpose
+** Test call waiting disabling
+** Purpose
     Verify R002.
-**Estimated Test Time
+** Estimated Test Time
     10 minutes
-**Setup
+** Setup
     Standard setup as described above. A stopwatch and an electronic tuner will be needed.
-**Execution
+** Execution
 |--------------------------------------------------------------------+-----------+----------|
 | Step                                                               | Pass/Fail | Comments |
 |--------------------------------------------------------------------+-----------+----------|
