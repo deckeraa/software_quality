@@ -213,11 +213,11 @@ To tear down after a test, disconnect all phones involved by hanging up.
 |--------------------------------------------------------------------+-----------+----------|
 | Step                                                               | Pass/Fail | Comments |
 |--------------------------------------------------------------------+-----------+----------|
-|1. Have caller A_enabled call caller B.	                              –	–
-|2. Have caller C call caller A.	                                      –	–
-|3. Have caller A_disable the call waiting with caller C           	    –	–
-|4. Have caller C either leave a message to Caller A or hang up	        –	–
-|5. Verify that caller A_enabled is still talking to caller B	
+|1. Have caller A_enabled call caller B.	                             | --        | --       |
+|2. Have caller C call caller A.	                                     | --        | --       |
+|3. Have caller A_disable the call waiting with caller C           	    | --        | --       |
+|4. Have caller C either leave a message to Caller A or hang up	       | --        | --       |
+|5. Verify that caller A_enabled is still talking to caller B	          |        |     |
 |--------------------------------------------------------------------+-----------+----------|
 ***Expected Results
     Caller A should still be talking to Caller B and the call waiting tone will be disabled (R002).
