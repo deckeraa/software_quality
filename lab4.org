@@ -245,7 +245,7 @@ To tear down after a test, disconnect all phones involved by hanging up.
 |-----------------------------------------------------------------------------------------------------------+-----------+----------|
 | 1. Have caller A_enabled call caller B.                                                                   | --        | --       |
 | 2. Have caller C call caller A.                                                                           | --        | --       |
-| 3. When caller A_enabled hears the call waiting tone.                                                     | --        | --       |
+| 3. Caller A_enabled should hear the notify tone.                                                          | --        | --       |
 | 4. Have caller A_enabled switch to caller C.                                                              | --        | --       |
 | 5. [Verify that caller A_enabled can talk to caller C. (R006)]                                            |           |          |
 | 6. [Verify that caller B is on hold. (R006)]                                                              |           |          |
