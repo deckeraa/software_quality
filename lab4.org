@@ -397,3 +397,9 @@ application. Writing test cases for these requirements allows us to understand w
 it takes to make a good testable requirement as well as a quality test case. Test cases
 that actually test the system are a crucial part of any quality software system.
 
+Alex Richter:
+Lab 4 is being done so that we can get a refresher on requirements building and the construction
+of test cases.  From here we are getting a more in-depth look at the designing of test documents 
+and the formatting of placing these test cases in one location.  We are also getting practice
+in creating test cases from the requirements that we build ourselves.  
+
