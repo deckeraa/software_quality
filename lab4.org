@@ -335,7 +335,41 @@ To tear down after a test, disconnect all phones involved by hanging up.
 |           |       |      |             |           |          |
 |-----------+-------+------+-------------+-----------+----------|
 
+** Test Caller A Answering Caller C
+*** Purpose
+    Verify R003, R012, R013
+*** Estimated Test Time
+    4 minutes
+*** Setup
+    Standard setup as described above. Will also need stopwatch.
+*** Execution
+|----------------------------------------------------------------------+-----------+----------|
+| Step                                                                 | Pass/Fail | Comments |
+|----------------------------------------------------------------------+-----------+----------|
+| 1. Have caller A_enabled call caller B.                              | --        | --       |
+| 2. Have caller B answer the call from Caller A.                      | --        | --       |
+| 4. Have caller C call caller A.                                      | --        | --       |                        
+| 5. Have caller A wait 10 seconds to ensure wait tone beeps twice.    | --        | --       |
+| 6. Have caller A put caller B on hold.                               | --        | --       |
+| 7. Caller A will no longer hear the waiting tone.                    | --        | --       |
+| 8. Caller B will be placed on hold while Caller A talks to Caller C. | --        | --       |
+| 9. Caller B will be unable to hear any conversation between A and C  | --        | --       |  
+|----------------------------------------------------------------------+-----------+----------|
+*** Expected Results
+    Caller B will be on hold until Caller A ceases conversation with Caller C and returns 
+    to Caller B or hangs up entirely. The waiting tone should beep only two times while 
+    Caller A waits.  The waiting tone will not beep once Caller A responds to Caller C.
 
+*** Results Summary
+|-----------+-------+------+-------------+-----------+----------|
+| Date/Time | Build | Test | Actual Time | Pass/Fail | Comments |
+|-----------+-------+------+-------------+-----------+----------|
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|-----------+-------+------+-------------+-----------+----------|
 
 
 * Justification Paragraphs and lame excuses for not using SE Tools
