@@ -46,7 +46,7 @@ To tear down after a test, disconnect all phones involved by hanging up.
 * Test Cases
 ** Test call waiting tone
 *** Purpose
-    Verify R006 and R007.
+    Verify R007 and R008.
 *** Estimated Test Time
     10 minutes
 *** Setup
@@ -58,13 +58,13 @@ To tear down after a test, disconnect all phones involved by hanging up.
 | 1. Have caller A_enabled call caller B.                            | --        | --       |
 | 2. Have caller C call caller A.                                    | --        | --       |
 | 3. Start the stopwatch when you hear the call waiting tone.        | --        | --       |
-| 4. [Verify the tone is a 440 Hz sine wave using the tuner. (R007)] |           |          |
+| 4. [Verify the tone is a 440 Hz sine wave using the tuner. (R008)] |           |          |
 | 5. Stop the stopwatch when the call waiting tone stops.            | --        | --       |
-| 6. [Verify the tone length is 3 seconds (+/- 1 second) (R006)]      |           |          |
+| 6. [Verify the tone length is 3 seconds (+/- 1 second) (R007)]     |           |          |
 |--------------------------------------------------------------------+-----------+----------|
 *** Expected Results
-    Call waiting tone was a 440 Hz sine wave (R007).
-    Call waiting tone length was 3 seconds (+/- 1 second) (R006).
+    Call waiting tone was a 440 Hz sine wave (R008).
+    Call waiting tone length was 3 seconds (+/- 1 second) (R007).
 
 *** Results Summary
 |-----------+-------+------+-------------+-----------+----------|
