@@ -157,7 +157,7 @@ To tear down after a test, disconnect all phones involved by hanging up.
 | 5. [Verify the caller A is still connected to caller B. (R010)]      |           |          |
 |--------------------------------------------------------------------+-----------+----------|
 *** Expected Results
-    Caller A_enabled can talk to caller B after caller A _enabledignores a call from caller C (R010).
+    Caller A_enabled can talk to caller B after caller A _enabled ignores a call from caller C (R010).
 
 *** Results Summary
 |-----------+-------+------+-------------+-----------+----------|
@@ -183,11 +183,47 @@ To tear down after a test, disconnect all phones involved by hanging up.
 |--------------------------------------------------------------------+-----------+----------|
 | 1. Have caller A_disabled call caller B.                            | --        | --       |
 | 2. Have caller C call caller A and start the stopwatch.            | --        | --       |
-| 4. Stop the stopwatch after six (+/- 3) seconds.            | --        | --       |
-| 5. [Verify the caller A is still connected to caller B. (R011)]      |           |          |
+| 3. Stop the stopwatch after six (+/- 3) seconds.            | --        | --       |
+| 4. [Verify the caller A is still connected to caller B. (R011)]      |           |          |
 |--------------------------------------------------------------------+-----------+----------|
 *** Expected Results
-    Caller A_dsiabled can talk to caller B after caller C attempts a to call A_disabled (R010).
+    Caller A_disabled can talk to caller B after caller C attempts a to call A_disabled (R010).
+	
+
+*** Results Summary
+|-----------+-------+------+-------------+-----------+----------|
+| Date/Time | Build | Test | Actual Time | Pass/Fail | Comments |
+|-----------+-------+------+-------------+-----------+----------|
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|-----------+-------+------+-------------+-----------+----------|
+
+** Test Four callers
+*** Purpose
+    Verify R009
+*** Estimated Test Time
+    7 minutes
+*** Setup
+    Standard setup as described above.
+*** Execution
+|--------------------------------------------------------------------+-----------+----------|
+| Step                                                               | Pass/Fail | Comments |
+|--------------------------------------------------------------------+-----------+----------|
+| 1. Have caller A_enabled call caller B.                            | --        | --       |
+| 2. Have caller C call caller A.                                    | --        | --       |
+| 3. When caller A_enabled hears the call waiting tone, caller A_enabled should switch to talk to caller C. | --        | --       |
+| 4. Check that caller B can hear nothing.                           | --        | --       |
+| 5. Have caller D call caller A. 							         | --        | --       |
+| 6. [Verify the caller D is hears a busy tone. (R009)]              | --        | --       |
+| 7. [Verify the caller A can still hear caller C. (R009)]           | --        | --       |
+| 8. [Verify the caller A can switch to caller B. (R009)]            | --        | --       |
+|--------------------------------------------------------------------+-----------+----------|
+*** Expected Results
+    Caller A can talk to caller B and C after caller D attempts a to call A when a call is already waiting (R009).
+	
 
 *** Results Summary
 |-----------+-------+------+-------------+-----------+----------|
