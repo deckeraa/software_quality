@@ -201,6 +201,40 @@ To tear down after a test, disconnect all phones involved by hanging up.
 |-----------+-------+------+-------------+-----------+----------|
 
 
+
+**Test call waiting disabling
+**Purpose
+    Verify R002.
+**Estimated Test Time
+    10 minutes
+**Setup
+    Standard setup as described above. A stopwatch and an electronic tuner will be needed.
+**Execution
+|--------------------------------------------------------------------+-----------+----------|
+| Step                                                               | Pass/Fail | Comments |
+|--------------------------------------------------------------------+-----------+----------|
+|1. Have caller A_enabled call caller B.	                              –	–
+|2. Have caller C call caller A.	                                      –	–
+|3. Have caller A_disable the call waiting with caller C           	    –	–
+|4. Have caller C either leave a message to Caller A or hang up	        –	–
+|5. Verify that caller A_enabled is still talking to caller B	
+|--------------------------------------------------------------------+-----------+----------|
+***Expected Results
+    Caller A should still be talking to Caller B and the call waiting tone will be disabled (R002).
+*** Results Summary
+|-----------+-------+------+-------------+-----------+----------|
+| Date/Time | Build | Test | Actual Time | Pass/Fail | Comments |
+|-----------+-------+------+-------------+-----------+----------|
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|           |       |      |             |           |          |
+|-----------+-------+------+-------------+-----------+----------|
+
+
+
+
 * Justification Paragraphs and lame excuses for not using SE Tools
 We are doing lab 4 to help us understand how to create good requirements, and test cases for a real world situation.
 It teaches us to ensure that the requirements and test cases cover every situation that the call waiting can have so
